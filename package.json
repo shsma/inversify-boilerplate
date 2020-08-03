@@ -1,0 +1,28 @@
+{
+  "name": "inversify-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf build && ./node_modules/typescript/bin/tsc",
+    "start": "ts-node -r tsconfig-paths/register --transpile-only app/index.ts",
+    "test": "npm run test:acceptance && npm run test:unit && npm run test:migrations",
+    "test:acceptance": "NODE_ENV=test mocha --timeout 4000 -r tests/acceptance/setup.js -r ts-node/register -r tsconfig-paths/register \"tests/acceptance/**/*.ts\" --bail",
+    "test:unit": "NODE_ENV=test mocha -r ts-node/register -r tsconfig-paths/register --recursive \"tests/unit/**/*.ts\" --bail"
+  },
+  "author": "Shady",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2"
+  },
+  "dependencies": {
+    "@types/restify": "^8.4.2",
+    "inversify": "^5.0.1",
+    "inversify-restify-utils": "^3.4.1",
+    "reflect-metadata": "^0.1.13",
+    "restify": "^8.5.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.9.7"
+  }
+}
