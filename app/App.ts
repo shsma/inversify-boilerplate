@@ -8,7 +8,7 @@ import { bind }from "./bind";
 
 export class App {
     private readonly port: number;
-    private server: Server
+    private readonly server: Server
     public readonly container: Container;
 
     constructor(port: number = 80) {
